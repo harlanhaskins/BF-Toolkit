@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="9046" systemVersion="15B38b" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BF_TV" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="8WK-qp-TuZ">
+                                <rect key="frame" x="434" y="852" width="1052" height="203"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="XQ2-WQ-WbK">
+                                        <rect key="frame" x="0.0" y="0.0" width="1052" height="86"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5CR-3T-O9q">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="86"/>
+                                                <animations/>
+                                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                                <state key="normal" title="+"/>
+                                                <connections>
+                                                    <action selector="addCharacter:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="tcb-OP-2nw"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="otZ-s3-b31">
+                                                <rect key="frame" x="143" y="0.0" width="97" height="86"/>
+                                                <animations/>
+                                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                                <state key="normal" title="-"/>
+                                                <connections>
+                                                    <action selector="addCharacter:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="nh3-Uh-W5e"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqg-8e-3a8">
+                                                <rect key="frame" x="279" y="0.0" width="104" height="86"/>
+                                                <animations/>
+                                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                                <state key="normal" title="&gt;"/>
+                                                <connections>
+                                                    <action selector="addCharacter:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="v6V-DD-DE2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WK-lm-YEv">
+                                                <rect key="frame" x="422" y="0.0" width="104" height="86"/>
+                                                <animations/>
+                                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                                <state key="normal" title="&lt;"/>
+                                                <connections>
+                                                    <action selector="addCharacter:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="gBS-h0-TpY"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yc-ye-RYV">
+                                                <rect key="frame" x="565" y="0.0" width="94" height="86"/>
+                                                <animations/>
+                                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                                <state key="normal" title="["/>
+                                                <connections>
+                                                    <action selector="addCharacter:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="wFQ-6u-SBL"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71o-OT-mph">
+                                                <rect key="frame" x="698" y="0.0" width="94" height="86"/>
+                                                <animations/>
+                                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                                <state key="normal" title="]"/>
+                                                <connections>
+                                                    <action selector="addCharacter:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="OFj-5m-WyJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkf-4V-CUv">
+                                                <rect key="frame" x="831" y="0.0" width="91" height="86"/>
+                                                <animations/>
+                                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                                <state key="normal" title=","/>
+                                                <connections>
+                                                    <action selector="addCharacter:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="IhB-y4-f2w"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VcC-4d-sT9">
+                                                <rect key="frame" x="961" y="0.0" width="91" height="86"/>
+                                                <animations/>
+                                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                                <state key="normal" title="."/>
+                                                <connections>
+                                                    <action selector="addCharacter:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="1lQ-vJ-gRa"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2U-qo-5zW">
+                                        <rect key="frame" x="452" y="117" width="148" height="86"/>
+                                        <animations/>
+                                        <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                        <state key="normal" title="Run"/>
+                                        <connections>
+                                            <action selector="runBrainfuck:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="SYZ-NZ-SHj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wgP-i1-5Ha">
+                                <rect key="frame" x="45" y="0.0" width="1830" height="837"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPq-9h-1sO">
+                                        <rect key="frame" x="0.0" y="0.0" width="915" height="837"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSV-5h-ozP">
+                                        <rect key="frame" x="915" y="0.0" width="915" height="837"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstItem="sPq-9h-1sO" firstAttribute="width" secondItem="xSV-5h-ozP" secondAttribute="width" id="r4n-da-V79"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="wgP-i1-5Ha" secondAttribute="trailing" constant="25" id="RPx-w4-liu"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="8WK-qp-TuZ" secondAttribute="bottom" constant="25" id="iid-Y0-SBg"/>
+                            <constraint firstItem="wgP-i1-5Ha" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="m3V-tC-HD6"/>
+                            <constraint firstItem="XQ2-WQ-WbK" firstAttribute="top" secondItem="wgP-i1-5Ha" secondAttribute="bottom" constant="15" id="nm6-73-S8O"/>
+                            <constraint firstItem="wgP-i1-5Ha" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="tJO-6j-HeB"/>
+                            <constraint firstItem="8WK-qp-TuZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ylL-h4-RFe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="inputTextView" destination="sPq-9h-1sO" id="Uxq-p5-2jv"/>
+                        <outlet property="outputTextView" destination="xSV-5h-ozP" id="l7T-jn-cBc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="338" y="387"/>
+        </scene>
+    </scenes>
+</document>

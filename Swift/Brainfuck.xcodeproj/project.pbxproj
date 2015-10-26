@@ -1,0 +1,778 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DC0310771BD0A0CD00597400 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0310761BD0A0CD00597400 /* AppDelegate.swift */; };
+		DC0310791BD0A0CD00597400 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0310781BD0A0CD00597400 /* ViewController.swift */; };
+		DC03107C1BD0A0CD00597400 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC03107A1BD0A0CD00597400 /* Main.storyboard */; };
+		DC03107E1BD0A0CD00597400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC03107D1BD0A0CD00597400 /* Assets.xcassets */; };
+		DC0310811BD0A0CD00597400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC03107F1BD0A0CD00597400 /* LaunchScreen.storyboard */; };
+		DC03108C1BD0A0CD00597400 /* BrainfuckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC03108B1BD0A0CD00597400 /* BrainfuckTests.swift */; };
+		DC0310971BD0A0CD00597400 /* BrainfuckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0310961BD0A0CD00597400 /* BrainfuckUITests.swift */; };
+		DC3F41AB1BD5FF130069980F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3F41AA1BD5FF130069980F /* AppDelegate.swift */; };
+		DC3F41AD1BD5FF130069980F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3F41AC1BD5FF130069980F /* ViewController.swift */; };
+		DC3F41B01BD5FF130069980F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3F41AE1BD5FF130069980F /* Main.storyboard */; };
+		DC3F41B21BD5FF130069980F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC3F41B11BD5FF130069980F /* Assets.xcassets */; };
+		DC3F41BD1BD5FF130069980F /* BF_TVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3F41BC1BD5FF130069980F /* BF_TVTests.swift */; };
+		DC7DFA901BD15BF500298848 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7DFA8F1BD15BF500298848 /* Banner.swift */; };
+		DCC1A3951BD715E9008E89F3 /* Brainfuck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3931BD715E9008E89F3 /* Brainfuck.swift */; settings = {ASSET_TAGS = (); }; };
+		DCC1A3961BD715E9008E89F3 /* Brainfuck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3931BD715E9008E89F3 /* Brainfuck.swift */; settings = {ASSET_TAGS = (); }; };
+		DCC1A3971BD715E9008E89F3 /* Brainfuck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3931BD715E9008E89F3 /* Brainfuck.swift */; settings = {ASSET_TAGS = (); }; };
+		DCC1A3981BD715E9008E89F3 /* Brainfuck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3931BD715E9008E89F3 /* Brainfuck.swift */; settings = {ASSET_TAGS = (); }; };
+		DCC1A3991BD715E9008E89F3 /* Brainfuck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3931BD715E9008E89F3 /* Brainfuck.swift */; settings = {ASSET_TAGS = (); }; };
+		DCC1A39A1BD715E9008E89F3 /* BrainfuckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3941BD715E9008E89F3 /* BrainfuckEmitter.swift */; settings = {ASSET_TAGS = (); }; };
+		DCC1A39B1BD715E9008E89F3 /* BrainfuckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3941BD715E9008E89F3 /* BrainfuckEmitter.swift */; settings = {ASSET_TAGS = (); }; };
+		DCC1A39C1BD715E9008E89F3 /* BrainfuckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3941BD715E9008E89F3 /* BrainfuckEmitter.swift */; settings = {ASSET_TAGS = (); }; };
+		DCC1A39D1BD715E9008E89F3 /* BrainfuckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3941BD715E9008E89F3 /* BrainfuckEmitter.swift */; settings = {ASSET_TAGS = (); }; };
+		DCC1A39E1BD715E9008E89F3 /* BrainfuckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3941BD715E9008E89F3 /* BrainfuckEmitter.swift */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DC0310881BD0A0CD00597400 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC03106B1BD0A0CD00597400 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC0310721BD0A0CD00597400;
+			remoteInfo = Brainfuck;
+		};
+		DC0310931BD0A0CD00597400 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC03106B1BD0A0CD00597400 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC0310721BD0A0CD00597400;
+			remoteInfo = Brainfuck;
+		};
+		DC3F41B91BD5FF130069980F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC03106B1BD0A0CD00597400 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC3F41A71BD5FF130069980F;
+			remoteInfo = "BF-TV";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DC0310731BD0A0CD00597400 /* Brainfuck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Brainfuck.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC0310761BD0A0CD00597400 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DC0310781BD0A0CD00597400 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DC03107B1BD0A0CD00597400 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DC03107D1BD0A0CD00597400 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DC0310801BD0A0CD00597400 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DC0310821BD0A0CD00597400 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC0310871BD0A0CD00597400 /* BrainfuckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrainfuckTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC03108B1BD0A0CD00597400 /* BrainfuckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainfuckTests.swift; sourceTree = "<group>"; };
+		DC03108D1BD0A0CD00597400 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC0310921BD0A0CD00597400 /* BrainfuckUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrainfuckUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC0310961BD0A0CD00597400 /* BrainfuckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainfuckUITests.swift; sourceTree = "<group>"; };
+		DC0310981BD0A0CD00597400 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC0310A41BD0A0DB00597400 /* Brainfuck-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Brainfuck-Bridging-Header.h"; sourceTree = "<group>"; };
+		DC3F41A81BD5FF130069980F /* BF-TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BF-TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC3F41AA1BD5FF130069980F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DC3F41AC1BD5FF130069980F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DC3F41AF1BD5FF130069980F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DC3F41B11BD5FF130069980F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DC3F41B31BD5FF130069980F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC3F41B81BD5FF130069980F /* BF-TVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BF-TVTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC3F41BC1BD5FF130069980F /* BF_TVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BF_TVTests.swift; sourceTree = "<group>"; };
+		DC3F41BE1BD5FF130069980F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC7DFA8F1BD15BF500298848 /* Banner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		DCC1A3931BD715E9008E89F3 /* Brainfuck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brainfuck.swift; sourceTree = "<group>"; };
+		DCC1A3941BD715E9008E89F3 /* BrainfuckEmitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrainfuckEmitter.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC0310701BD0A0CD00597400 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC0310841BD0A0CD00597400 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC03108F1BD0A0CD00597400 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC3F41A51BD5FF130069980F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC3F41B51BD5FF130069980F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DC03106A1BD0A0CD00597400 = {
+			isa = PBXGroup;
+			children = (
+				DC0310751BD0A0CD00597400 /* Brainfuck */,
+				DC03108A1BD0A0CD00597400 /* BrainfuckTests */,
+				DC0310951BD0A0CD00597400 /* BrainfuckUITests */,
+				DC3F41A91BD5FF130069980F /* BF-TV */,
+				DC3F41BB1BD5FF130069980F /* BF-TVTests */,
+				DC0310741BD0A0CD00597400 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DC0310741BD0A0CD00597400 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC0310731BD0A0CD00597400 /* Brainfuck.app */,
+				DC0310871BD0A0CD00597400 /* BrainfuckTests.xctest */,
+				DC0310921BD0A0CD00597400 /* BrainfuckUITests.xctest */,
+				DC3F41A81BD5FF130069980F /* BF-TV.app */,
+				DC3F41B81BD5FF130069980F /* BF-TVTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC0310751BD0A0CD00597400 /* Brainfuck */ = {
+			isa = PBXGroup;
+			children = (
+				DCC1A3931BD715E9008E89F3 /* Brainfuck.swift */,
+				DCC1A3941BD715E9008E89F3 /* BrainfuckEmitter.swift */,
+				DC0310761BD0A0CD00597400 /* AppDelegate.swift */,
+				DC0310781BD0A0CD00597400 /* ViewController.swift */,
+				DC7DFA8F1BD15BF500298848 /* Banner.swift */,
+				DC03107A1BD0A0CD00597400 /* Main.storyboard */,
+				DC03107D1BD0A0CD00597400 /* Assets.xcassets */,
+				DC03107F1BD0A0CD00597400 /* LaunchScreen.storyboard */,
+				DC0310821BD0A0CD00597400 /* Info.plist */,
+				DC0310A41BD0A0DB00597400 /* Brainfuck-Bridging-Header.h */,
+			);
+			path = Brainfuck;
+			sourceTree = "<group>";
+		};
+		DC03108A1BD0A0CD00597400 /* BrainfuckTests */ = {
+			isa = PBXGroup;
+			children = (
+				DC03108B1BD0A0CD00597400 /* BrainfuckTests.swift */,
+				DC03108D1BD0A0CD00597400 /* Info.plist */,
+			);
+			path = BrainfuckTests;
+			sourceTree = "<group>";
+		};
+		DC0310951BD0A0CD00597400 /* BrainfuckUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DC0310961BD0A0CD00597400 /* BrainfuckUITests.swift */,
+				DC0310981BD0A0CD00597400 /* Info.plist */,
+			);
+			path = BrainfuckUITests;
+			sourceTree = "<group>";
+		};
+		DC3F41A91BD5FF130069980F /* BF-TV */ = {
+			isa = PBXGroup;
+			children = (
+				DC3F41AA1BD5FF130069980F /* AppDelegate.swift */,
+				DC3F41AC1BD5FF130069980F /* ViewController.swift */,
+				DC3F41AE1BD5FF130069980F /* Main.storyboard */,
+				DC3F41B11BD5FF130069980F /* Assets.xcassets */,
+				DC3F41B31BD5FF130069980F /* Info.plist */,
+			);
+			path = "BF-TV";
+			sourceTree = "<group>";
+		};
+		DC3F41BB1BD5FF130069980F /* BF-TVTests */ = {
+			isa = PBXGroup;
+			children = (
+				DC3F41BC1BD5FF130069980F /* BF_TVTests.swift */,
+				DC3F41BE1BD5FF130069980F /* Info.plist */,
+			);
+			path = "BF-TVTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC0310721BD0A0CD00597400 /* Brainfuck */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC03109B1BD0A0CD00597400 /* Build configuration list for PBXNativeTarget "Brainfuck" */;
+			buildPhases = (
+				DC03106F1BD0A0CD00597400 /* Sources */,
+				DC0310701BD0A0CD00597400 /* Frameworks */,
+				DC0310711BD0A0CD00597400 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Brainfuck;
+			productName = Brainfuck;
+			productReference = DC0310731BD0A0CD00597400 /* Brainfuck.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DC0310861BD0A0CD00597400 /* BrainfuckTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC03109E1BD0A0CD00597400 /* Build configuration list for PBXNativeTarget "BrainfuckTests" */;
+			buildPhases = (
+				DC0310831BD0A0CD00597400 /* Sources */,
+				DC0310841BD0A0CD00597400 /* Frameworks */,
+				DC0310851BD0A0CD00597400 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC0310891BD0A0CD00597400 /* PBXTargetDependency */,
+			);
+			name = BrainfuckTests;
+			productName = BrainfuckTests;
+			productReference = DC0310871BD0A0CD00597400 /* BrainfuckTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DC0310911BD0A0CD00597400 /* BrainfuckUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC0310A11BD0A0CD00597400 /* Build configuration list for PBXNativeTarget "BrainfuckUITests" */;
+			buildPhases = (
+				DC03108E1BD0A0CD00597400 /* Sources */,
+				DC03108F1BD0A0CD00597400 /* Frameworks */,
+				DC0310901BD0A0CD00597400 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC0310941BD0A0CD00597400 /* PBXTargetDependency */,
+			);
+			name = BrainfuckUITests;
+			productName = BrainfuckUITests;
+			productReference = DC0310921BD0A0CD00597400 /* BrainfuckUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		DC3F41A71BD5FF130069980F /* BF-TV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC3F41C31BD5FF130069980F /* Build configuration list for PBXNativeTarget "BF-TV" */;
+			buildPhases = (
+				DC3F41A41BD5FF130069980F /* Sources */,
+				DC3F41A51BD5FF130069980F /* Frameworks */,
+				DC3F41A61BD5FF130069980F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BF-TV";
+			productName = "BF-TV";
+			productReference = DC3F41A81BD5FF130069980F /* BF-TV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DC3F41B71BD5FF130069980F /* BF-TVTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC3F41C41BD5FF130069980F /* Build configuration list for PBXNativeTarget "BF-TVTests" */;
+			buildPhases = (
+				DC3F41B41BD5FF130069980F /* Sources */,
+				DC3F41B51BD5FF130069980F /* Frameworks */,
+				DC3F41B61BD5FF130069980F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC3F41BA1BD5FF130069980F /* PBXTargetDependency */,
+			);
+			name = "BF-TVTests";
+			productName = "BF-TVTests";
+			productReference = DC3F41B81BD5FF130069980F /* BF-TVTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC03106B1BD0A0CD00597400 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Harlan Haskins";
+				TargetAttributes = {
+					DC0310721BD0A0CD00597400 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = W7GJMYD5A4;
+					};
+					DC0310861BD0A0CD00597400 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = DC0310721BD0A0CD00597400;
+					};
+					DC0310911BD0A0CD00597400 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = DC0310721BD0A0CD00597400;
+					};
+					DC3F41A71BD5FF130069980F = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					DC3F41B71BD5FF130069980F = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = DC3F41A71BD5FF130069980F;
+					};
+				};
+			};
+			buildConfigurationList = DC03106E1BD0A0CD00597400 /* Build configuration list for PBXProject "Brainfuck" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DC03106A1BD0A0CD00597400;
+			productRefGroup = DC0310741BD0A0CD00597400 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC0310721BD0A0CD00597400 /* Brainfuck */,
+				DC0310861BD0A0CD00597400 /* BrainfuckTests */,
+				DC0310911BD0A0CD00597400 /* BrainfuckUITests */,
+				DC3F41A71BD5FF130069980F /* BF-TV */,
+				DC3F41B71BD5FF130069980F /* BF-TVTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC0310711BD0A0CD00597400 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC0310811BD0A0CD00597400 /* LaunchScreen.storyboard in Resources */,
+				DC03107E1BD0A0CD00597400 /* Assets.xcassets in Resources */,
+				DC03107C1BD0A0CD00597400 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC0310851BD0A0CD00597400 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC0310901BD0A0CD00597400 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC3F41A61BD5FF130069980F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC3F41B21BD5FF130069980F /* Assets.xcassets in Resources */,
+				DC3F41B01BD5FF130069980F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC3F41B61BD5FF130069980F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC03106F1BD0A0CD00597400 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC7DFA901BD15BF500298848 /* Banner.swift in Sources */,
+				DC0310791BD0A0CD00597400 /* ViewController.swift in Sources */,
+				DCC1A39A1BD715E9008E89F3 /* BrainfuckEmitter.swift in Sources */,
+				DC0310771BD0A0CD00597400 /* AppDelegate.swift in Sources */,
+				DCC1A3951BD715E9008E89F3 /* Brainfuck.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC0310831BD0A0CD00597400 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC03108C1BD0A0CD00597400 /* BrainfuckTests.swift in Sources */,
+				DCC1A3961BD715E9008E89F3 /* Brainfuck.swift in Sources */,
+				DCC1A39B1BD715E9008E89F3 /* BrainfuckEmitter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC03108E1BD0A0CD00597400 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC0310971BD0A0CD00597400 /* BrainfuckUITests.swift in Sources */,
+				DCC1A3971BD715E9008E89F3 /* Brainfuck.swift in Sources */,
+				DCC1A39C1BD715E9008E89F3 /* BrainfuckEmitter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC3F41A41BD5FF130069980F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCC1A39D1BD715E9008E89F3 /* BrainfuckEmitter.swift in Sources */,
+				DCC1A3981BD715E9008E89F3 /* Brainfuck.swift in Sources */,
+				DC3F41AD1BD5FF130069980F /* ViewController.swift in Sources */,
+				DC3F41AB1BD5FF130069980F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC3F41B41BD5FF130069980F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC3F41BD1BD5FF130069980F /* BF_TVTests.swift in Sources */,
+				DCC1A3991BD715E9008E89F3 /* Brainfuck.swift in Sources */,
+				DCC1A39E1BD715E9008E89F3 /* BrainfuckEmitter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DC0310891BD0A0CD00597400 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC0310721BD0A0CD00597400 /* Brainfuck */;
+			targetProxy = DC0310881BD0A0CD00597400 /* PBXContainerItemProxy */;
+		};
+		DC0310941BD0A0CD00597400 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC0310721BD0A0CD00597400 /* Brainfuck */;
+			targetProxy = DC0310931BD0A0CD00597400 /* PBXContainerItemProxy */;
+		};
+		DC3F41BA1BD5FF130069980F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC3F41A71BD5FF130069980F /* BF-TV */;
+			targetProxy = DC3F41B91BD5FF130069980F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DC03107A1BD0A0CD00597400 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC03107B1BD0A0CD00597400 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DC03107F1BD0A0CD00597400 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC0310801BD0A0CD00597400 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DC3F41AE1BD5FF130069980F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC3F41AF1BD5FF130069980F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DC0310991BD0A0CD00597400 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DC03109A1BD0A0CD00597400 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DC03109C1BD0A0CD00597400 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = Brainfuck/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.harlan.Brainfuck;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Brainfuck/Brainfuck-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DC03109D1BD0A0CD00597400 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = Brainfuck/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.harlan.Brainfuck;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Brainfuck/Brainfuck-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		DC03109F1BD0A0CD00597400 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BrainfuckTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.harlan.BrainfuckTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Brainfuck.app/Brainfuck";
+			};
+			name = Debug;
+		};
+		DC0310A01BD0A0CD00597400 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BrainfuckTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.harlan.BrainfuckTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Brainfuck.app/Brainfuck";
+			};
+			name = Release;
+		};
+		DC0310A21BD0A0CD00597400 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BrainfuckUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.harlan.BrainfuckUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Brainfuck;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		DC0310A31BD0A0CD00597400 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BrainfuckUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.harlan.BrainfuckUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Brainfuck;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+		DC3F41BF1BD5FF130069980F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "BF-TV/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.harlan.BF-TV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		DC3F41C01BD5FF130069980F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "BF-TV/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.harlan.BF-TV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+		DC3F41C11BD5FF130069980F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "BF-TVTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.harlan.BF-TVTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BF-TV.app/BF-TV";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		DC3F41C21BD5FF130069980F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "BF-TVTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.harlan.BF-TVTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BF-TV.app/BF-TV";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC03106E1BD0A0CD00597400 /* Build configuration list for PBXProject "Brainfuck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC0310991BD0A0CD00597400 /* Debug */,
+				DC03109A1BD0A0CD00597400 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC03109B1BD0A0CD00597400 /* Build configuration list for PBXNativeTarget "Brainfuck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC03109C1BD0A0CD00597400 /* Debug */,
+				DC03109D1BD0A0CD00597400 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC03109E1BD0A0CD00597400 /* Build configuration list for PBXNativeTarget "BrainfuckTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC03109F1BD0A0CD00597400 /* Debug */,
+				DC0310A01BD0A0CD00597400 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC0310A11BD0A0CD00597400 /* Build configuration list for PBXNativeTarget "BrainfuckUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC0310A21BD0A0CD00597400 /* Debug */,
+				DC0310A31BD0A0CD00597400 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC3F41C31BD5FF130069980F /* Build configuration list for PBXNativeTarget "BF-TV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC3F41BF1BD5FF130069980F /* Debug */,
+				DC3F41C01BD5FF130069980F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC3F41C41BD5FF130069980F /* Build configuration list for PBXNativeTarget "BF-TVTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC3F41C11BD5FF130069980F /* Debug */,
+				DC3F41C21BD5FF130069980F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DC03106B1BD0A0CD00597400 /* Project object */;
+}

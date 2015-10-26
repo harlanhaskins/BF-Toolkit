@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9046" systemVersion="15B38b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Brainfuck" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nH8-FF-QNh">
+                                <rect key="frame" x="25" y="45" width="550" height="375"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="9M6-uc-EJa">
+                                        <rect key="frame" x="0.0" y="0.0" width="550" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ri-9h-d4k">
+                                                <rect key="frame" x="0.0" y="0.0" width="39" height="30"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdw-jK-xAG">
+                                                <rect key="frame" x="514" y="0.0" width="36" height="30"/>
+                                                <animations/>
+                                                <state key="normal" title="Clear"/>
+                                                <connections>
+                                                    <action selector="clearInput:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PrP-CW-0If"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UZo-Z5-sdA">
+                                        <rect key="frame" x="0.0" y="38" width="550" height="100"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="2bk-V8-Krw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lbe-1b-8cH">
+                                        <rect key="frame" x="0.0" y="146" width="97" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIZ-Eu-Yjt">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <animations/>
+                                                <state key="normal" title="Run"/>
+                                                <connections>
+                                                    <action selector="runBrainfuck:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OUS-xk-ydV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMW-sv-1jS">
+                                                <rect key="frame" x="40" y="0.0" width="57" height="30"/>
+                                                <animations/>
+                                                <state key="normal" title="Compile"/>
+                                                <connections>
+                                                    <action selector="compileBrainfuckButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ik5-hQ-u3i"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input to Brainfuck program" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGa-MY-EJG">
+                                        <rect key="frame" x="0.0" y="184" width="163" height="16"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="Mr2-8U-oNs">
+                                        <rect key="frame" x="0.0" y="208" width="550" height="30"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hNc-7d-pgP">
+                                                <rect key="frame" x="0.0" y="0.0" width="503" height="30"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dy8-0j-bDS">
+                                                <rect key="frame" x="514" y="0.0" width="36" height="30"/>
+                                                <animations/>
+                                                <state key="normal" title="Clear"/>
+                                                <connections>
+                                                    <action selector="clearSubInput:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5To-2r-JXI"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="FKb-ec-jmP">
+                                        <rect key="frame" x="0.0" y="246" width="550" height="21"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Elo-lH-wL0">
+                                                <rect key="frame" x="0.0" y="0.0" width="54" height="21"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Output" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="muk-Zw-XYO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="54" height="21"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="wm5-Ml-Hq6">
+                                                        <rect key="frame" x="54" y="0.0" width="0.0" height="21"/>
+                                                        <animations/>
+                                                    </activityIndicatorView>
+                                                </subviews>
+                                                <animations/>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ljz-31-O0a">
+                                                <rect key="frame" x="514" y="0.0" width="36" height="21"/>
+                                                <animations/>
+                                                <state key="normal" title="Clear"/>
+                                                <connections>
+                                                    <action selector="clearOutput:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sHX-OC-Mti"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ldm-pU-Zhn">
+                                        <rect key="frame" x="0.0" y="275" width="550" height="100"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="lj7-Jc-oVD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstItem="9M6-uc-EJa" firstAttribute="width" secondItem="nH8-FF-QNh" secondAttribute="width" id="95y-vH-McY"/>
+                                    <constraint firstItem="Mr2-8U-oNs" firstAttribute="width" secondItem="nH8-FF-QNh" secondAttribute="width" id="Iod-Q3-oq6"/>
+                                    <constraint firstItem="FKb-ec-jmP" firstAttribute="width" secondItem="nH8-FF-QNh" secondAttribute="width" id="Vnk-a5-0eQ"/>
+                                    <constraint firstItem="ldm-pU-Zhn" firstAttribute="width" secondItem="nH8-FF-QNh" secondAttribute="width" id="r0P-hR-wpe"/>
+                                    <constraint firstItem="UZo-Z5-sdA" firstAttribute="width" secondItem="nH8-FF-QNh" secondAttribute="width" id="wpL-fz-vOW"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nH8-FF-QNh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="25" id="9fg-AD-lIj"/>
+                            <constraint firstItem="nH8-FF-QNh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="D8j-mM-Qo9"/>
+                            <constraint firstAttribute="trailing" secondItem="nH8-FF-QNh" secondAttribute="trailing" constant="25" id="PJI-Mv-c9g"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="wm5-Ml-Hq6" id="iNT-K9-jOv"/>
+                        <outlet property="compileButton" destination="gMW-sv-1jS" id="Gf0-kk-IoH"/>
+                        <outlet property="inputTextView" destination="UZo-Z5-sdA" id="pt3-bq-GhB"/>
+                        <outlet property="outputTextView" destination="ldm-pU-Zhn" id="ocq-Qd-WWs"/>
+                        <outlet property="runButton" destination="MIZ-Eu-Yjt" id="Pyi-17-hif"/>
+                        <outlet property="subInputTextField" destination="hNc-7d-pgP" id="N1I-BA-Nsd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
