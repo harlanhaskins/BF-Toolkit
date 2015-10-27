@@ -35,7 +35,7 @@ instance Emitter CEmitter where
                           , "char mem[" ++ (show s) ++ "];"
                           , "char *p = mem;"
                           , "int main() {"
-                          , i ++ "memset(p, 0, " ++ (show s) ++ ");"
+                          , i ++ "memset(p, 0, " ++ (show s) ++ " * sizeof(char));"
                           ]
     handle e@(CEmitter _ i) (ModPtr v)   = (e, i ++ "p "  ++ (signString v) ++ "= " ++ ((show . abs) v) ++ ";")
     handle e@(CEmitter _ i) (ModVal v)   = (e, i ++ "*p " ++ (signString v) ++ "= " ++ ((show . abs) v) ++ ";")
