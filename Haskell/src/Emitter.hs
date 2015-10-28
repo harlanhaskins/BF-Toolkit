@@ -14,6 +14,7 @@ class Emitter a where
 
 signString i = (if (i > 0) then "+" else "-")
 signedShow i = signString i ++ ((show . abs) i)
+inPlaceAssignment v = signString v ++ "= " ++ ((show . abs) v)
 
 data IREmitter = IREmitter String
 instance Emitter IREmitter where
@@ -37,14 +38,31 @@ instance Emitter CEmitter where
                           , "int main() {"
                           , i ++ "memset(p, 0, " ++ (show s) ++ " * sizeof(char));"
                           ]
-    handle e@(CEmitter _ i) (ModPtr v)   = (e, i ++ "p "  ++ (signString v) ++ "= " ++ ((show . abs) v) ++ ";")
-    handle e@(CEmitter _ i) (ModVal v)   = (e, i ++ "*p " ++ (signString v) ++ "= " ++ ((show . abs) v) ++ ";")
+    handle e@(CEmitter _ i) (ModPtr v)   = (e, i ++ "p "  ++ inPlaceAssignment v ++ ";")
+    handle e@(CEmitter _ i) (ModVal v)   = (e, i ++ "*p " ++ inPlaceAssignment v ++ ";")
     handle e@(CEmitter s i) (Loop ops)   = let (_, handled) = mapAccumL handle (CEmitter s (i ++ "    ")) ops
                                            in (e, toLines [i ++ "while (*p) {", toLines handled, i ++ "}"])
     handle e@(CEmitter _ i) Input        = (e, i ++ "*p = getchar();")
     handle e@(CEmitter _ i) Output       = (e, i ++ "putchar(*p);")
     handle e@(CEmitter _ i) Clear        = (e, i ++ "*p = 0;")
     epilogue _            = "}"
+
+data PythonEmitter = PythonEmitter Int String
+instance Emitter PythonEmitter where
+    prologue (PythonEmitter s _) = unlines
+                                 [ "from __future__ import print_function"
+                                 , "import sys"
+                                 , "memory = [0] * " ++ show s
+                                 , "p = 0"
+                                 ]
+    handle e@(PythonEmitter _ i) (ModVal v) = (e, i ++ "memory[p] " ++ inPlaceAssignment v)
+    handle e@(PythonEmitter _ i) (ModPtr v) = (e, i ++ "p "         ++ inPlaceAssignment v)
+    handle e@(PythonEmitter _ i) Input      = (e, i ++ "memory[p] = ord(sys.stdin.read(1))")
+    handle e@(PythonEmitter _ i) Output     = (e, i ++ "print(chr(memory[p]), end='')")
+    handle e@(PythonEmitter _ i) Clear      = (e, i ++ "memory[p] = 0")
+    handle e@(PythonEmitter s i) (Loop ops) = let (_, handled) = mapAccumL handle (PythonEmitter s (i ++ "    ")) ops
+                                              in (e, toLines [i ++ "while memory[p]:", toLines handled])
+    epilogue _ = ""
 
 data X86Emitter = X86Emitter Int Int
 instance Emitter X86Emitter where

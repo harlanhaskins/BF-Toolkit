@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Swift
 
 protocol BrainfuckEmitter {
     var brainfuck: Brainfuck { get }
@@ -206,12 +207,8 @@ class PythonEmitter: BrainfuckEmitter {
             let body = ops.lazy.map(self.handle).map { self.indentation + $0  }.lines()
             indentation = indentation.substringToIndex(indentation.endIndex.advancedBy(-4))
             return [first, body].lines()
-        case .Input:
-            return "memory[p] = ord(sys.stdin.read(1))"
-        case .Output:
-            return [
-                "print(chr(memory[p]), end='')",
-            ].joinWithSeparator("\n" + indentation)
+        case .Input: return "memory[p] = ord(sys.stdin.read(1))"
+        case .Output: return "print(chr(memory[p]), end='')"
         case .Clear: return "memory[p] = 0"
         }
     }

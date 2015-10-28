@@ -129,10 +129,10 @@ struct Brainfuck {
             
             switch (op, last) {
             case (.ModifyPointer(let value), .ModifyPointer(let value2)):
-                newProgram = Array(newProgram.dropLast())
+                newProgram.removeLast()
                 newProgram.append(.ModifyPointer(amount: value + value2))
             case (.ModifyValue(let value), .ModifyValue(let value2)):
-                newProgram = Array(newProgram.dropLast())
+                newProgram.removeLast()
                 newProgram.append(.ModifyValue(amount: value + value2))
             default:
                 newProgram.append(op)
