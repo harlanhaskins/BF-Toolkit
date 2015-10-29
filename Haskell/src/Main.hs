@@ -36,7 +36,8 @@ emitTarget "python" os = emit (PythonEmitter 30000 "") os
 emitTarget "c"      os = emit (CEmitter 30000 "    ") os
 emitTarget "hasm"   os = emit (HasmEmitter 0) os
 emitTarget "ir"     os = emit (IREmitter "") os
-emitTarget "mips"     os = emit (MIPSEmitter 30000 0) os
+emitTarget "mips"   os = emit (MIPSEmitter 30000 0) os
+emitTarget "java"   os = emit (JavaEmitter 30000 "        ") os
 emitTarget t        _  = "Invalid target: " ++ t
 
 main = do
