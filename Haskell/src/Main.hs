@@ -5,6 +5,7 @@ module Main where
 import Brainfuck.Core
 import Brainfuck.Emitter
 import qualified Data.Vector.Unboxed as V
+import Data.Either
 import Data.Char
 import Options.Applicative
 import System.Environment
@@ -35,16 +36,17 @@ emitTarget "python" os = emit (PythonEmitter 30000 "") os
 emitTarget "c"      os = emit (CEmitter 30000 "    ") os
 emitTarget "hasm"   os = emit (HasmEmitter 0) os
 emitTarget "ir"     os = emit (IREmitter "") os
-emitTarget t        _  = "Invalid target: " ++ t 
+emitTarget "mips"     os = emit (MIPSEmitter 30000 0) os
+emitTarget t        _  = "Invalid target: " ++ t
 
 main = do
     (Config filename passes t) <- execParser (info config fullDesc)
     program <- readFile filename
-    let instructions = (optimizeN passes . compile) program
-    let target = fmap (map toLower) t
-    case target of
-        (Just t') -> putStrLn $ emitTarget t' instructions
-        Nothing -> do
-            run (Brainfuck 0 (V.replicate 30000 0)) instructions
-            return ()
+    let result = compile program
+    either (putStrLn . ("Error: " ++)) (handle t . optimizeN passes) result
+    where handle t ops = case (fmap (map toLower) t) of
+            (Just t') -> putStrLn $ emitTarget t' ops
+            Nothing -> do
+                run (Brainfuck 0 (V.replicate 30000 0)) ops
+                return ()
 
