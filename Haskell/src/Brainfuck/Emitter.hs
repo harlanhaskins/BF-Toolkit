@@ -59,11 +59,27 @@ instance Emitter JavaEmitter where
     handle e@(JavaEmitter _ i) (ModPtr v)   = (e, i ++ "p "  ++ inPlaceAssignment v ++ ";")
     handle e@(JavaEmitter _ i) (ModVal v)   = (e, i ++ "memory[p] " ++ inPlaceAssignment v ++ ";")
     handle e@(JavaEmitter s i) (Loop ops)   = let (_, handled) = mapAccumL handle (JavaEmitter s (i ++ "    ")) ops
-                                           in (e, toLines [i ++ "while ((int)memory[p] != 0) {", toLines handled, i ++ "}"])
+                                              in (e, toLines [i ++ "while ((int)memory[p] != 0) {", toLines handled, i ++ "}"])
     handle e@(JavaEmitter _ i) Input        = (e, i ++ "memory[p] = (char)System.in.read();")
     handle e@(JavaEmitter _ i) Output       = (e, i ++ "System.out.write(memory[p]);")
     handle e@(JavaEmitter _ i) Clear        = (e, i ++ "memory[p] = (char)0;")
     epilogue _                              = toLines [ "    }", "}" ]
+
+data SwiftEmitter = SwiftEmitter Int String
+instance Emitter SwiftEmitter where
+    prologue (SwiftEmitter s i) = toLines $
+                                  [ "import func Darwin.getchar"
+                                  , "var p = 0"
+                                  , "var memory = Array<UInt8>(count: " ++ show s ++ ", repeatedValue: 0)"
+                                  ]
+    handle e@(SwiftEmitter _ i) (ModPtr v)   = (e, i ++ "p = p &"  ++ signString v ++ " " ++ (show . abs) v)
+    handle e@(SwiftEmitter _ i) (ModVal v)   = (e, i ++ "memory[p] = memory[p] &"  ++ signString v ++ " " ++ (show . abs) v)
+    handle e@(SwiftEmitter s i) (Loop ops)   = let (_, handled) = mapAccumL handle (SwiftEmitter s (i ++ "    ")) ops
+                                               in (e, toLines [i ++ "while memory[p] != 0 {", toLines handled, i ++ "}"])
+    handle e@(SwiftEmitter _ i) Input        = (e, i ++ "memory[p] = String(getchar()).utf8.first!")
+    handle e@(SwiftEmitter _ i) Output       = (e, i ++ "print(Character(UnicodeScalar(memory[p])), terminator: \"\")")
+    handle e@(SwiftEmitter _ i) Clear        = (e, i ++ "memory[p] = 0")
+    epilogue _                               = ""
 
 data PythonEmitter = PythonEmitter Int String
 instance Emitter PythonEmitter where

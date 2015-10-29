@@ -38,6 +38,7 @@ emitTarget "hasm"   os = emit (HasmEmitter 0) os
 emitTarget "ir"     os = emit (IREmitter "") os
 emitTarget "mips"   os = emit (MIPSEmitter 30000 0) os
 emitTarget "java"   os = emit (JavaEmitter 30000 "        ") os
+emitTarget "swift"  os = emit (SwiftEmitter 30000 "") os
 emitTarget t        _  = "Invalid target: " ++ t
 
 main = do
