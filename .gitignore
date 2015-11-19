@@ -35,4 +35,8 @@ DerivedData
 Carthage/Build
 *.i
 *.o
+*.bf
+*.elf
+*.gba
+gameboy/build/
 bf
