@@ -164,10 +164,10 @@ instance Emitter HasmEmitter where
                                          (e', toLines
                                               [ "loop_" ++ (show lc) ++ ":"
                                               , "        ld t0 s0"
-                                              , "        beqz t0 loop_" ++ show lc ++ "_end"
+                                              , "        beq 0 t0 loop_" ++ show lc ++ "_end"
                                               , toLines handled
                                               , "        ld t0 s0"
-                                              , "        bnez t0 loop_" ++ show lc
+                                              , "        bne 0 t0 loop_" ++ show lc
                                               , "loop_" ++ (show lc) ++ "_end:"
                                               ])
     handle e Input                     = (e,  toLines
