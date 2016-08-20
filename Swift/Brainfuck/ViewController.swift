@@ -20,16 +20,16 @@ class ViewController: UIViewController {
     var brainfuck: Brainfuck?
     var output = ""
     
-    @IBAction func clearInput(sender: AnyObject) {
+    @IBAction func clearInput(_ sender: AnyObject) {
         inputTextView.text = ""
     }
     
-    @IBAction func clearOutput(sender: AnyObject) {
+    @IBAction func clearOutput(_ sender: AnyObject) {
         outputTextView.text = ""
         output = ""
     }
     
-    @IBAction func clearSubInput(sender: AnyObject) {
+    @IBAction func clearSubInput(_ sender: AnyObject) {
         subInputTextField.text = ""
     }
     
@@ -40,7 +40,7 @@ class ViewController: UIViewController {
             brainfuck = try Brainfuck(program: program, optimized: true, input: {
                 defer {
                     if !input.isEmpty {
-                        input = input.substringFromIndex(input.startIndex.advancedBy(1))
+                        input = input.substring(from: input.index(input.startIndex, offsetBy: 1))
                     }
                 }
                 return input.characters.first ?? Character(UnicodeScalar(0))
@@ -54,43 +54,43 @@ class ViewController: UIViewController {
     
     func startRunning() {
         activityIndicator.startAnimating()
-        runButton.enabled = false
-        compileButton.enabled = false
+        runButton.isEnabled = false
+        compileButton.isEnabled = false
         output = ""
     }
     
     func stopRunning() {
         activityIndicator.stopAnimating()
-        runButton.enabled = true
-        compileButton.enabled = true
+        runButton.isEnabled = true
+        compileButton.isEnabled = true
         self.outputTextView.text = self.output
     }
     
-    @IBAction func runBrainfuck(sender: AnyObject) {
+    @IBAction func runBrainfuck(_ sender: AnyObject) {
         outputTextView.text = ""
         createBrainfuck()
         startRunning()
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {
             do {
                 try self.brainfuck?.run()
             } catch {
                 self.showError(error)
             }
-            dispatch_async(dispatch_get_main_queue(), self.stopRunning)
+            DispatchQueue.main.async(execute: self.stopRunning)
         }
     }
     
-    func showError(error: ErrorType) {
-        dispatch_async(dispatch_get_main_queue()) {
+    func showError(_ error: Error) {
+        DispatchQueue.main.async {
             self.stopRunning()
-            let b = Banner(title: "Error", subtitle: "\(error)", image: nil, backgroundColor: UIColor.redColor())
-            b.preferredStatusBarStyle = .LightContent
+            let b = Banner(title: "Error", subtitle: "\(error)", image: nil, backgroundColor: UIColor.red)
+            b.preferredStatusBarStyle = .lightContent
             b.adjustsStatusBarStyle = true
             b.show(duration: 3.0)
         }
     }
     
-    @IBAction func compileBrainfuckButtonPressed(sender: AnyObject) {
+    @IBAction func compileBrainfuckButtonPressed(_ sender: AnyObject) {
         createBrainfuck()
         guard let bf = brainfuck else {
             return

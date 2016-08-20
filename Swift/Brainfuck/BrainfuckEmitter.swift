@@ -13,7 +13,7 @@ protocol BrainfuckEmitter {
     var brainfuck: Brainfuck { get }
     init(brainfuck: Brainfuck)
     func setup() -> String?
-    func handle(op: Operator) -> String
+    func handle(_ op: Operator) -> String
     func tearDown() -> String?
 }
 
@@ -42,23 +42,23 @@ class IREmitter: BrainfuckEmitter {
     
     var indentation = ""
 
-    func handle(op: Operator) -> String {
+    func handle(_ op: Operator) -> String {
         switch op {
-        case .ModifyPointer(let amount):
+        case .modifyPointer(let amount):
             let modifier = (amount < 0 ? "-" : "+")
             return "Pointer \(modifier)\(abs(amount))"
-        case .ModifyValue(let amount):
+        case .modifyValue(let amount):
             let modifier = (amount < 0 ? "-" : "+")
             return "Value \(modifier)\(abs(amount))"
-        case .Loop(let ops):
+        case .loop(let ops):
             let first = "Loop:"
             indentation += "    "
             let body = ops.lazy.map(self.handle).map { self.indentation + $0  }.lines()
-            indentation = indentation.substringToIndex(indentation.endIndex.advancedBy(-4))
+            indentation = indentation.substring(to: indentation.index(indentation.endIndex, offsetBy: -4))
             return [first, body].lines()
-        case .Input: return "Input"
-        case .Output: return "Output"
-        case .Clear: return "Clear"
+        case .input: return "Input"
+        case .output: return "Output"
+        case .clear: return "Clear"
         }
     }
 }
@@ -75,23 +75,23 @@ struct CEmitter: BrainfuckEmitter {
         ].lines()
     }
     
-    func handle(op: Operator) -> String {
+    func handle(_ op: Operator) -> String {
         switch op {
-        case .Input: return "*p = getchar();"
-        case .Output: return "putchar(*p);"
-        case .Loop(let ops):
+        case .input: return "*p = getchar();"
+        case .output: return "putchar(*p);"
+        case .loop(let ops):
             return [
                 "while (*p) {",
                 ops.map(self.handle).lines(),
                 "}"
             ].lines()
-        case .ModifyPointer(let amount):
+        case .modifyPointer(let amount):
             let modifier = amount < 0 ? "-" : "+"
             return "p \(modifier)= \(abs(amount));"
-        case .ModifyValue(let amount):
+        case .modifyValue(let amount):
             let modifier = amount < 0 ? "-" : "+"
             return "*p \(modifier)= \(abs(amount));"
-        case .Clear: return "*p = 0;"
+        case .clear: return "*p = 0;"
         }
     }
     
@@ -106,23 +106,23 @@ struct CEmitter: BrainfuckEmitter {
 struct SwiftEmitter: BrainfuckEmitter {
     let brainfuck: Brainfuck
     
-    func handle(op: Operator) -> String {
+    func handle(_ op: Operator) -> String {
         switch op {
-        case .Input: return "memory[p] = String(getchar()).utf8.first!"
-        case .Output: return "print(Character(UnicodeScalar(memory[p])), terminator: \"\")"
-        case .ModifyValue(let amount):
+        case .input: return "memory[p] = String(getchar()).utf8.first!"
+        case .output: return "print(Character(UnicodeScalar(memory[p])), terminator: \"\")"
+        case .modifyValue(let amount):
             let modifier = amount < 0 ? "-" : "+"
             return "memory[p] = memory[p] &\(modifier) \(abs(amount))"
-        case .ModifyPointer(let amount):
+        case .modifyPointer(let amount):
             let modifier = amount < 0 ? "-" : "+"
             return "p = p &\(modifier) \(abs(amount))"
-        case .Loop(let ops):
+        case .loop(let ops):
             return [
                 "while memory[p] != 0 {",
                 ops.map(self.handle).lines(),
                 "}"
             ].lines()
-        case .Clear: return "memory[p] = 0"
+        case .clear: return "memory[p] = 0"
         }
     }
     
@@ -148,23 +148,23 @@ struct JavaEmitter: BrainfuckEmitter {
         ].lines()
     }
     
-    func handle(op: Operator) -> String {
+    func handle(_ op: Operator) -> String {
         switch op {
-        case .ModifyPointer(let amount):
+        case .modifyPointer(let amount):
             let modifier = amount < 0 ? "-" : "+"
             return "p \(modifier)= \(abs(amount));"
-        case .ModifyValue(let amount):
+        case .modifyValue(let amount):
             let modifier = amount < 0 ? "-" : "+"
             return "memory[p] \(modifier)= \(abs(amount));"
-        case .Input: return "memory[p] = (char)System.in.read();"
-        case .Output: return "System.out.write(memory[p]);"
-        case .Loop(let ops):
+        case .input: return "memory[p] = (char)System.in.read();"
+        case .output: return "System.out.write(memory[p]);"
+        case .loop(let ops):
             return [
                 "while ((int)memory[p] != 0) {",
                 ops.map(self.handle).lines(),
                 "}"
             ].lines()
-        case .Clear: return "memory[p] = (char)0;"
+        case .clear: return "memory[p] = (char)0;"
         }
     }
     
@@ -193,23 +193,23 @@ class PythonEmitter: BrainfuckEmitter {
         ].lines()
     }
     
-    func handle(op: Operator) -> String {
+    func handle(_ op: Operator) -> String {
         switch op {
-        case .ModifyPointer(let amount):
+        case .modifyPointer(let amount):
             let modifier = amount < 0 ? "-" : "+"
             return "p \(modifier)= \(abs(amount))"
-        case .ModifyValue(let amount):
+        case .modifyValue(let amount):
             let modifier = amount < 0 ? "-" : "+"
             return "memory[p] \(modifier)= \(abs(amount))"
-        case .Loop(let ops):
+        case .loop(let ops):
             let first = "while memory[p]:"
             indentation += "    "
             let body = ops.lazy.map(self.handle).map { self.indentation + $0  }.lines()
-            indentation = indentation.substringToIndex(indentation.endIndex.advancedBy(-4))
+            indentation = indentation.substring(to: indentation.index(indentation.endIndex, offsetBy: -4))
             return [first, body].lines()
-        case .Input: return "memory[p] = ord(sys.stdin.read(1))"
-        case .Output: return "print(chr(memory[p]), end='')"
-        case .Clear: return "memory[p] = 0"
+        case .input: return "memory[p] = ord(sys.stdin.read(1))"
+        case .output: return "print(chr(memory[p]), end='')"
+        case .clear: return "memory[p] = 0"
         }
     }
 }
@@ -233,13 +233,13 @@ class X86Emitter: BrainfuckEmitter {
         ].lines()
     }
     
-    func handle(op: Operator) -> String {
+    func handle(_ op: Operator) -> String {
         switch op {
-        case .ModifyPointer(let amount):
+        case .modifyPointer(let amount):
             return "        add     r8, \(amount)"
-        case .ModifyValue(let amount):
+        case .modifyValue(let amount):
             return "        add     byte [r8], \(amount)"
-        case .Loop(let ops):
+        case .loop(let ops):
             let firstSet = [
                 "loop_\(loopCounter):",
                 "        cmp     byte [r8], 0",
@@ -250,26 +250,26 @@ class X86Emitter: BrainfuckEmitter {
                 "        jne     loop_\(loopCounter)",
                 "loop_\(loopCounter)_end:"
             ]
-            loopCounter++
+            loopCounter += 1
             return (firstSet + ops.map(self.handle) + secondSet).lines()
-        case .Input:
+        case .input:
             return [
                 "        mov    rax, 0x2000003",
-                "        mov    rdi, \(stdin.memory._file)",
+                "        mov    rdi, \(stdin.pointee._file)",
                 "        mov    rsi, r8",
                 "        mov    rdx, 1",
                 "        syscall",
                 "        mov    byte [r8], al",
             ].lines()
-        case .Output:
+        case .output:
             return [
                 "        mov     rax, 0x2000004",
-                "        mov     rdi, \(stdout.memory._file)",
+                "        mov     rdi, \(stdout.pointee._file)",
                 "        mov     rsi, r8",
                 "        mov     rdx, 1",
                 "        syscall",
             ].lines()
-        case .Clear:
+        case .clear:
             return "        mov     byte [r8], 0"
         }
     }
@@ -312,17 +312,17 @@ required
         ].lines()
     }
     
-    func handle(op: Operator) -> String {
+    func handle(_ op: Operator) -> String {
         switch op {
-        case .ModifyPointer(let amount):
+        case .modifyPointer(let amount):
             return "       addi   $s0, $s0, \(2 * amount)"
-        case .ModifyValue(let amount):
+        case .modifyValue(let amount):
             return [
                 "       lb     $t0, 0($s0)",
                 "       addi   $t0, $t0, \(amount)",
                 "       sb     $t0, 0($s0)"
             ].lines()
-        case .Loop(let ops):
+        case .loop(let ops):
             let firstSet = [
                 "loop_\(loopCounter): ",
                 "       lb     $t0, 0($s0)",
@@ -332,22 +332,22 @@ required
                 "       j      loop_\(loopCounter)",
                 "loop_\(loopCounter)_end:"
             ]
-            loopCounter++
+            loopCounter += 1
             return (firstSet + ops.map(self.handle) + secondSet).lines()
-        case .Output:
+        case .output:
             return [
                 "       lb     $t0, 0($s0)",
                 "       move   $a0, $t0",
                 "       li     $v0, 11",
                 "       syscall"
             ].lines()
-        case .Input:
+        case .input:
             return [
                 "       li     $v0, 12",
                 "       syscall",
                 "       sb    $v0, 0($s0)"
             ].lines()
-        case .Clear:
+        case .clear:
             return "       sb   $zero, 0($s0)"
         }
     }
@@ -361,8 +361,8 @@ required
     
 }
 
-extension SequenceType where Generator.Element == String {
+extension Sequence where Iterator.Element == String {
     func lines() -> String {
-        return self.joinWithSeparator("\n")
+        return self.joined(separator: "\n")
     }
 }

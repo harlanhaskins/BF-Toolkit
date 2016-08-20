@@ -20,16 +20,16 @@
 		DC3F41B21BD5FF130069980F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC3F41B11BD5FF130069980F /* Assets.xcassets */; };
 		DC3F41BD1BD5FF130069980F /* BF_TVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3F41BC1BD5FF130069980F /* BF_TVTests.swift */; };
 		DC7DFA901BD15BF500298848 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7DFA8F1BD15BF500298848 /* Banner.swift */; };
-		DCC1A3951BD715E9008E89F3 /* Brainfuck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3931BD715E9008E89F3 /* Brainfuck.swift */; settings = {ASSET_TAGS = (); }; };
-		DCC1A3961BD715E9008E89F3 /* Brainfuck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3931BD715E9008E89F3 /* Brainfuck.swift */; settings = {ASSET_TAGS = (); }; };
-		DCC1A3971BD715E9008E89F3 /* Brainfuck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3931BD715E9008E89F3 /* Brainfuck.swift */; settings = {ASSET_TAGS = (); }; };
-		DCC1A3981BD715E9008E89F3 /* Brainfuck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3931BD715E9008E89F3 /* Brainfuck.swift */; settings = {ASSET_TAGS = (); }; };
-		DCC1A3991BD715E9008E89F3 /* Brainfuck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3931BD715E9008E89F3 /* Brainfuck.swift */; settings = {ASSET_TAGS = (); }; };
-		DCC1A39A1BD715E9008E89F3 /* BrainfuckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3941BD715E9008E89F3 /* BrainfuckEmitter.swift */; settings = {ASSET_TAGS = (); }; };
-		DCC1A39B1BD715E9008E89F3 /* BrainfuckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3941BD715E9008E89F3 /* BrainfuckEmitter.swift */; settings = {ASSET_TAGS = (); }; };
-		DCC1A39C1BD715E9008E89F3 /* BrainfuckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3941BD715E9008E89F3 /* BrainfuckEmitter.swift */; settings = {ASSET_TAGS = (); }; };
-		DCC1A39D1BD715E9008E89F3 /* BrainfuckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3941BD715E9008E89F3 /* BrainfuckEmitter.swift */; settings = {ASSET_TAGS = (); }; };
-		DCC1A39E1BD715E9008E89F3 /* BrainfuckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3941BD715E9008E89F3 /* BrainfuckEmitter.swift */; settings = {ASSET_TAGS = (); }; };
+		DCC1A3951BD715E9008E89F3 /* Brainfuck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3931BD715E9008E89F3 /* Brainfuck.swift */; };
+		DCC1A3961BD715E9008E89F3 /* Brainfuck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3931BD715E9008E89F3 /* Brainfuck.swift */; };
+		DCC1A3971BD715E9008E89F3 /* Brainfuck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3931BD715E9008E89F3 /* Brainfuck.swift */; };
+		DCC1A3981BD715E9008E89F3 /* Brainfuck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3931BD715E9008E89F3 /* Brainfuck.swift */; };
+		DCC1A3991BD715E9008E89F3 /* Brainfuck.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3931BD715E9008E89F3 /* Brainfuck.swift */; };
+		DCC1A39A1BD715E9008E89F3 /* BrainfuckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3941BD715E9008E89F3 /* BrainfuckEmitter.swift */; };
+		DCC1A39B1BD715E9008E89F3 /* BrainfuckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3941BD715E9008E89F3 /* BrainfuckEmitter.swift */; };
+		DCC1A39C1BD715E9008E89F3 /* BrainfuckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3941BD715E9008E89F3 /* BrainfuckEmitter.swift */; };
+		DCC1A39D1BD715E9008E89F3 /* BrainfuckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3941BD715E9008E89F3 /* BrainfuckEmitter.swift */; };
+		DCC1A39E1BD715E9008E89F3 /* BrainfuckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1A3941BD715E9008E89F3 /* BrainfuckEmitter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -302,26 +302,31 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Harlan Haskins";
 				TargetAttributes = {
 					DC0310721BD0A0CD00597400 = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = W7GJMYD5A4;
+						LastSwiftMigration = 0800;
 					};
 					DC0310861BD0A0CD00597400 = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = DC0310721BD0A0CD00597400;
 					};
 					DC0310911BD0A0CD00597400 = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = DC0310721BD0A0CD00597400;
 					};
 					DC3F41A71BD5FF130069980F = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0800;
 					};
 					DC3F41B71BD5FF130069980F = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = DC3F41A71BD5FF130069980F;
 					};
 				};
@@ -506,8 +511,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -551,8 +558,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -590,6 +599,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Brainfuck/Brainfuck-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -606,6 +616,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Brainfuck/Brainfuck-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -617,6 +629,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harlan.BrainfuckTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Brainfuck.app/Brainfuck";
 			};
 			name = Debug;
@@ -629,6 +642,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harlan.BrainfuckTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Brainfuck.app/Brainfuck";
 			};
 			name = Release;
@@ -640,6 +655,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harlan.BrainfuckUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Brainfuck;
 				USES_XCTRUNNER = YES;
 			};
@@ -652,6 +668,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harlan.BrainfuckUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Brainfuck;
 				USES_XCTRUNNER = YES;
 			};
@@ -667,6 +685,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.harlan.BF-TV";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -682,6 +701,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.harlan.BF-TV";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -696,6 +717,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.harlan.BF-TVTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BF-TV.app/BF-TV";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -710,6 +732,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.harlan.BF-TVTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BF-TV.app/BF-TV";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};

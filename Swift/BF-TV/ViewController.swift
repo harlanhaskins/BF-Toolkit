@@ -17,8 +17,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        inputTextView.font = UIFont.preferredFontForTextStyle(UIFontTextStyleTitle1)
-        outputTextView.font = UIFont.preferredFontForTextStyle(UIFontTextStyleTitle1)
+        inputTextView.font = UIFont.preferredFont(forTextStyle: .title1)
+        outputTextView.font = UIFont.preferredFont(forTextStyle: .title1)
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,8 +26,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func addCharacter(sender: UIButton) {
-        inputTextView.text = inputTextView.text + (sender.titleForState(sender.state) ?? "")
+    @IBAction func addCharacter(_ sender: UIButton) {
+        inputTextView.text = inputTextView.text + (sender.title(for: sender.state) ?? "")
     }
     
     func createBrainfuck() {
@@ -37,12 +37,12 @@ class ViewController: UIViewController {
             brainfuck = try Brainfuck(program: program, optimized: true, input: {
                 defer {
                     if !input.isEmpty {
-                        input = input.substringFromIndex(input.startIndex.advancedBy(1))
+                        input = input.substring(from: input.index(input.startIndex, offsetBy: 1))
                     }
                 }
                 return input.characters.first ?? Character(UnicodeScalar(0))
                 }, output: { char in
-                    dispatch_async(dispatch_get_main_queue()) {
+                    DispatchQueue.main.async {
                         self.outputTextView.text = self.outputTextView.text + "\(char)"
                     }
             })
@@ -51,12 +51,12 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func runBrainfuck(sender: AnyObject) {
+    @IBAction func runBrainfuck(_ sender: AnyObject) {
         outputTextView.text = ""
         createBrainfuck()
-        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {
             do {
-                self.brainfuck?.run()
+                try self.brainfuck?.run()
             } catch {
                 self.outputTextView.text = "\(error)"
             }

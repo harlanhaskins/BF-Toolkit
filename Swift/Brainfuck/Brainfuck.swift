@@ -1,22 +1,22 @@
 enum Operator {
-    case ModifyPointer(amount: Int32)
-    case ModifyValue(amount: Int)
-    case Loop(ops: [Operator])
-    case Input
-    case Output
-    case Clear
+    case modifyPointer(amount: Int32)
+    case modifyValue(amount: Int)
+    case loop(ops: [Operator])
+    case input
+    case output
+    case clear
     
     var compiledDescription: String {
         switch self {
-        case .ModifyPointer(let amount):
-            return Array(count: Int(abs(amount)), repeatedValue: (amount < 0 ? "<" : ">")).joinWithSeparator("")
-        case .ModifyValue(let amount):
-            return Array(count: Int(abs(amount)), repeatedValue: (amount < 0 ? "-" : "+")).joinWithSeparator("")
-        case .Loop(let ops):
-            return "[" + ops.map { $0.compiledDescription }.joinWithSeparator("") + "]"
-        case .Input: return ","
-        case .Output: return "."
-        case .Clear: return "<clr>" // "[-]"
+        case .modifyPointer(let amount):
+            return Array(repeating: (amount < 0 ? "<" : ">"), count: Int(abs(amount))).joined(separator: "")
+        case .modifyValue(let amount):
+            return Array(repeating: (amount < 0 ? "-" : "+"), count: Int(abs(amount))).joined(separator: "")
+        case .loop(let ops):
+            return "[" + ops.map { $0.compiledDescription }.joined(separator: "") + "]"
+        case .input: return ","
+        case .output: return "."
+        case .clear: return "<clr>" // "[-]"
         }
     }
 }
@@ -24,99 +24,99 @@ enum Operator {
 extension Operator: Equatable {}
 func ==(lhs: Operator, rhs: Operator) -> Bool {
     switch (lhs, rhs) {
-    case (.ModifyPointer(let amount), .ModifyPointer(let amount2)) where amount == amount2: return true
-    case (.ModifyValue(let amount), .ModifyValue(let amount2)) where amount == amount2: return true
-    case (.Loop(let ops), .Loop(let ops2)) where ops == ops2: return true
-    case (.Input, .Input): return true
-    case (.Output, .Output): return true
-    case (.Clear, .Clear): return true
+    case (.modifyPointer(let amount), .modifyPointer(let amount2)) where amount == amount2: return true
+    case (.modifyValue(let amount), .modifyValue(let amount2)) where amount == amount2: return true
+    case (.loop(let ops), .loop(let ops2)) where ops == ops2: return true
+    case (.input, .input): return true
+    case (.output, .output): return true
+    case (.clear, .clear): return true
     default: return false
     }
 }
 
-enum BrainfuckError: ErrorType {
-    case ImbalancedLoops(index: Int)
-    case InvalidCharacter
-    case OutOfBounds
+enum BrainfuckError: Error {
+    case imbalancedLoops(index: Int)
+    case invalidCharacter
+    case outOfBounds
 }
 
 struct Brainfuck {
     let instructions: [Operator]
     let input: () -> Character
-    let output: Character -> ()
-    var memorySpace = Array<UInt8>(count: 30000, repeatedValue: 0)
+    let output: (Character) -> ()
+    var memorySpace = Array<UInt8>(repeating: 0, count: 30000)
     var p = 0
     
-    init(instructions: [Operator], input: () -> Character, output: Character -> ()) {
+    init(instructions: [Operator], input: @escaping () -> Character, output: @escaping (Character) -> ()) {
         self.instructions = instructions
         self.input = input
         self.output = output
     }
     
-    init(program: String, optimized: Bool = false, input: () -> Character, output: Character -> ()) throws {
+  init(program: String, optimized: Bool = false, input: @escaping () -> Character, output: @escaping (Character) -> ()) throws {
         self.instructions = try Brainfuck.compile(program, optimized: optimized)
         self.input = input
         self.output = output
     }
 
-    static func compile(input: String, optimized: Bool) throws -> [Operator] {
+    static func compile(_ input: String, optimized: Bool) throws -> [Operator] {
         var program = [Operator]()
         var stack = [Operator]()
         for char in input.characters {
             let add = { (op: Operator) in
-                if case .Loop(var values)? = stack.last {
+                if case .loop(var values)? = stack.last {
                     values.append(op)
-                    stack[stack.count - 1] = .Loop(ops: values)
+                    stack[stack.count - 1] = .loop(ops: values)
                 } else {
                     program.append(op)
                 }
             }
             let pc = program.count
             switch "\(char)" {
-            case "[": stack.append(.Loop(ops: []))
+            case "[": stack.append(.loop(ops: []))
             case "]":
                 guard let loop = stack.last else {
-                    throw BrainfuckError.ImbalancedLoops(index: pc)
+                    throw BrainfuckError.imbalancedLoops(index: pc)
                 }
                 stack = Array(stack.dropLast())
                 add(loop)
-            case "+": add(.ModifyValue(amount: 1))
-            case "-": add(.ModifyValue(amount: -1))
-            case ">": add(.ModifyPointer(amount: 1))
-            case "<": add(.ModifyPointer(amount: -1))
-            case ",": add(.Input)
-            case ".": add(.Output)
+            case "+": add(.modifyValue(amount: 1))
+            case "-": add(.modifyValue(amount: -1))
+            case ">": add(.modifyPointer(amount: 1))
+            case "<": add(.modifyPointer(amount: -1))
+            case ",": add(.input)
+            case ".": add(.output)
             default: break
             }
         }
         guard stack.isEmpty else {
-            throw BrainfuckError.ImbalancedLoops(index: program.count)
+            throw BrainfuckError.imbalancedLoops(index: program.count)
         }
         return optimized ? optimize(program) : program
     }
     
-    static func numberOfInstructions(program: [Operator]) -> Int {
+    static func numberOfInstructions(_ program: [Operator]) -> Int {
         var count = 0
         for op in program {
-            count++
-            if case .Loop(let ops) = op {
+            count += 1
+            if case .loop(let ops) = op {
                 count += Brainfuck.numberOfInstructions(ops)
             }
         }
         return count
     }
     
-    static func optimize(program: [Operator]) -> [Operator] {
+    static func optimize(_ program: [Operator]) -> [Operator] {
         guard !program.isEmpty else { return program }
         var newProgram = [Operator]()
         for op in program {
             
             switch op {
-            case .Loop(let ops):
-                if case .ModifyValue(_)? = ops.first where ops.count == 1 {
-                    newProgram.append(.Clear)
+            case .loop(let ops):
+                if case .modifyValue(_)? = ops.first, ops.count == 1 {
+                    newProgram.append(.clear)
                 }  else {
-                    newProgram.append(.Loop(ops: optimize(ops)))
+                    newProgram.append(.loop(ops: optimize(ops)))
                 }
                 continue
             default: break
@@ -128,12 +128,12 @@ struct Brainfuck {
             }
             
             switch (op, last) {
-            case (.ModifyPointer(let value), .ModifyPointer(let value2)):
+            case (.modifyPointer(let value), .modifyPointer(let value2)):
                 newProgram.removeLast()
-                newProgram.append(.ModifyPointer(amount: value + value2))
-            case (.ModifyValue(let value), .ModifyValue(let value2)):
+                newProgram.append(.modifyPointer(amount: value + value2))
+            case (.modifyValue(let value), .modifyValue(let value2)):
                 newProgram.removeLast()
-                newProgram.append(.ModifyValue(amount: value + value2))
+                newProgram.append(.modifyValue(amount: value + value2))
             default:
                 newProgram.append(op)
             }
@@ -141,9 +141,9 @@ struct Brainfuck {
         
         return newProgram.filter { op in
             switch op {
-            case .ModifyPointer(let amount) where amount == 0: return false
-            case .ModifyValue(let amount) where amount == 0: return false
-            case .Loop(let ops) where ops.isEmpty: return false
+            case .modifyPointer(let amount) where amount == 0: return false
+            case .modifyValue(let amount) where amount == 0: return false
+            case .loop(let ops) where ops.isEmpty: return false
             default: return true
             }
         }
@@ -153,29 +153,29 @@ struct Brainfuck {
         try run(self.instructions)
     }
     
-    mutating private func run(program: [Operator]) throws {
+    mutating private func run(_ program: [Operator]) throws {
         for instruction in program {
             switch instruction {
-            case .ModifyValue(let amount):
+            case .modifyValue(let amount):
                 if amount < 0 {
                     memorySpace[p] = memorySpace[p] &- UInt8(abs(amount))
                 } else {
                     memorySpace[p] = memorySpace[p] &+ UInt8(amount)
                 }
-            case .ModifyPointer(let amount):
+            case .modifyPointer(let amount):
                 p += Int(amount)
-            case .Output:
+            case .output:
                 output(Character(UnicodeScalar(memorySpace[p])))
-            case .Input:
+            case .input:
                 let inputChar = input()
-                if let int = String(inputChar).unicodeScalars.first?.value where Int32(int) != EOF {
+                if let int = String(inputChar).unicodeScalars.first?.value, Int32(int) != -1 {
                     memorySpace[p] = UInt8(int)
                 }
-            case .Loop(let ops):
+            case .loop(let ops):
                 while memorySpace[p] != 0 {
                     try run(ops)
                 }
-            case .Clear:
+            case .clear:
                 memorySpace[p] = 0
             }
         }
